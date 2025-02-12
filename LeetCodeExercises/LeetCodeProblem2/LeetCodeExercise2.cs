@@ -11,9 +11,44 @@ namespace LeetCodeExercises.LeetCodeProblem2
     {
         public LeetCodeExercise2()
         {
-            int[] nums1 = { 2, 4, 3 };
-            int[] nums2 = { 5, 6, 4 };
             Console.WriteLine("Add Two Numbers");
+
+            // read first list and convert to array
+            Console.WriteLine("Insert the first list of positive integer numbers, -1 to stop:");
+            List<int> insertedNums = new List<int>();
+            int convertedSelection = -1;
+            while (!int.TryParse(Console.ReadLine(), out convertedSelection) ||
+                convertedSelection != -1)
+            {
+                if (convertedSelection > 0)
+                {
+                    insertedNums.Add(convertedSelection);
+                }
+                else
+                {
+                    Console.WriteLine("Wrong selection");
+                }
+            }
+            int[] nums1 = insertedNums.ToArray();
+
+            // read second list and convert to array
+            Console.WriteLine("Insert the second list of positive integer numbers, -1 to stop:");
+            insertedNums = new List<int>();
+            convertedSelection = -1;
+            while (!int.TryParse(Console.ReadLine(), out convertedSelection) ||
+                convertedSelection != -1)
+            {
+                if (convertedSelection > 0)
+                {
+                    insertedNums.Add(convertedSelection);
+                }
+                else
+                {
+                    Console.WriteLine("Wrong selection");
+                }
+            }
+            int[] nums2 = insertedNums.ToArray();
+
             Console.WriteLine("[{0}]", string.Join(", ", nums1));
             Console.WriteLine("[{0}]", string.Join(", ", nums2));
             LeetCodeSolution2 exercise = new LeetCodeSolution2();

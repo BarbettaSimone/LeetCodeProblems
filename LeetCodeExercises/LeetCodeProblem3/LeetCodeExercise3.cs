@@ -10,9 +10,9 @@ namespace LeetCodeExercises.LeetCodeProblem3
     {
         public LeetCodeExercise3()
         {
-            string inputStr = "abcdalsjflskjdsfkdf";
             Console.WriteLine("Longest Substring Without Repeating Characters");
-            Console.WriteLine(inputStr);
+            string inputStr = Console.ReadLine();
+
             LeetCodeSolution3 solution = new LeetCodeSolution3();
             int stringLength = solution.LengthOfLongestSubstring(inputStr);
             Console.WriteLine("Output: {0}", stringLength.ToString());
